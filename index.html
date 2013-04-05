@@ -1,0 +1,432 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Contacts</title>
+
+	<style>
+		@CHARSET "UTF-8";
+		html, body, div, span, applet, object, iframe,
+		h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+		a, abbr, acronym, address, big, cite, code,
+		del, dfn, em, img, ins, kbd, q, s, samp,
+		small, strike, strong, sub, sup, tt, var,
+		b, u, i, center,
+		dl, dt, dd, ol, ul, li,
+		fieldset, form, label, legend,
+		table, caption, tbody, tfoot, thead, tr, th, td,
+		article, aside, canvas, details, embed,
+		figure, figcaption, footer, header, hgroup,
+		menu, nav, output, ruby, section, summary,
+		time, mark, audio, video {
+			margin: 0;
+			padding: 0;
+			border: 0;
+			font-size: 100%;
+			font: inherit;
+			vertical-align: baseline;
+		}
+		article, aside, details, figcaption, figure,
+		footer, header, hgroup, menu, nav, section {
+			display: block;
+		}
+		body {
+			line-height: 1;
+		}
+		ol, ul {
+			list-style: none;
+		}
+
+		table {
+			border-collapse: collapse;
+			border-spacing: 0;
+		}
+		a {
+			color: #0068D2;
+			cursor: pointer;
+		}
+		a:link, a:visited {
+			text-decoration: none;
+			color: #0068D2;
+		}
+		a:hover, a:active {
+			text-decoration: underline;
+			color: #0068D2;
+		}
+
+		body {
+			font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+		}
+
+		h1 {
+			font-size:20px;
+		}
+
+		#header, #footer {
+			margin: 0 auto;
+			padding: 5px;
+			background-color: #E6ECF8;
+			height: auto;
+			border: 1px solid #335EA8;
+			overflow: hidden;
+		}
+		#header {
+			border-bottom: 1px solid #CCD1DB;
+		}
+		#footer {
+			height: 25px;
+			border-top:none;
+		}
+		#contact-container {
+			width: 300px;
+			margin: 40px auto;
+		}
+		#contacts-table {
+			border-collapse: collapse;
+			border-left: 1px solid #335EA8;
+			border-right: 1px solid #335EA8;
+		}
+		#contacts-table, #contacts-table th, #contacts-table td {
+			padding: 8px 15px;
+			text-align: left;
+		}
+		#contacts-table, #contacts-table th {
+			width: 300px;
+		}
+		#contacts-table th {
+			font-weight: bold;
+			font-size: 14px;
+			color: #29344B;
+		}
+		#contacts-table td {
+			color: #000;
+		}
+		#contacts-table td.phone {
+			display:none;
+		}
+		select#selector {
+			float:right;
+		}
+		div#info {
+			position:absolute;
+			display:none;
+			background:#ccc;
+			left: 830px;
+			padding:5px;
+		}
+		div#info img{
+			float:right;
+		}
+		div#info p{
+			float:left;
+		}
+		.rounded-top {
+			border-radius: 10px 10px 0 0;
+		}
+		.rounded-btm {
+			border-radius: 0 0 10px 10px;
+			overflow: hidden;
+		}
+		.rounded {
+			border-radius: 10px;
+			overflow: hidden;
+		}
+		.gradient {
+			background-image: -moz-linear-gradient(top, #ffffff, #E6ECF8); /* Firefox 3.6 */
+			background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, #E6ECF8),color-stop(1, #ffffff)); /* Safari & Chrome */
+			filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#ffffff', endColorstr='#E6ECF8'); /* IE6 & IE7 */
+			-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#ffffff', endColorstr='#E6ECF8')"; /* IE8 */
+		}
+
+	</style>
+
+
+</head>
+<body>
+
+	<div id="contact-container" class="rounded">
+		<div id="header" class="rounded-top">
+			<h1>Contacts</h1>
+		</div>
+		<table id="contacts-table">
+			<tbody>
+				<tr id="entry-1" data-id="1">
+					<td class="trigger">Amar</td>
+					<td class="email"><a href="amardeep@live.com">amardeep@live.com</a></td>
+					<td class="phone">408-555-1234</td>
+				</tr>
+				<tr id="entry-2" data-id="2">
+					<td class="trigger">Deepa</td>
+					<td class="email"><a href="deepa@yahoo.com">deepa@yahoo.com</a></td>
+					<td class="phone">408-555-1234</td>
+				</tr>
+				<tr id="entry-3" data-id="3">
+					<td class="trigger">Eric</td>
+					<td class="email"><a href="eric@ericrules.com">eric@ericrules.com</a></td>
+					<td class="phone">408-555-1234</td>
+				</tr>
+				<tr id="entry-4" data-id="4">
+					<td class="trigger">Gregor</td>
+					<td class="email"><a href="gregor@gmail.com">gregor@gmail.com</a></td>
+					<td class="phone">897-984-3145</td>
+				</tr>
+				<tr id="entry-5" data-id="5">
+					<td class="trigger">Jeff</td>
+					<td class="email"><a href="jeff@aol.com">jeff@aol.com</a></td>
+					<td class="phone">408-555-1234</td>
+				</tr>
+				<tr id="entry-6" data-id="6">
+					<td class="trigger">Jen</td>
+					<td class="email"><a href="jen@ebay.com">jen@ebay.com</a></td>
+					<td class="phone">408-555-1234</td>
+				</tr>
+				<tr id="entry-7" data-id="7">
+					<td class="trigger">Katie</td>
+					<td class="email"><a href="katie@ask.com">katie@ask.com</a></td>
+					<td class="phone">415-555-1234</td>
+				</tr>
+				<tr id="entry-8" data-id="8">
+					<td class="trigger">Vivian</td>
+					<td class="email"><a href="vivian@altavista.com">vivian@altavista.com</a></td>
+					<td class="phone">408-555-1234</td>
+				</tr>
+			</tbody>
+		</table>
+		<div id="footer" class="gradient rounded-btm">
+			<form id="contacts-form">
+				<select id="selector">
+					<option value="email">Email address</option>
+					<option value="phone">Phone number</option>
+				</select>
+			</form>
+		</div>
+	</div>
+
+	<div id="info"></div>
+
+	<script>
+		var objectContacts = [{
+			"id": 1,
+			"name": "Amar",
+			"email": "amardeep@live.com",
+			"phone": "408-555-1234",
+			"address1": "555 Halford Ave.",
+			"address2": "Apartment #43C",
+			"city": "Santa Clara",
+			"state": "CA",
+			"zip": "95051",
+			"image": "images/amar.gif"
+		}, {
+			"id": 2,
+			"name": "Deepa",
+			"email": "deepa@yahoo.com",
+			"phone": "408-555-1234",
+			"address1": "1234 Montcalm St.",
+			"address2": "",
+			"city": "Chula Vista",
+			"state": "CA",
+			"zip": "91911",
+			"image": "images/deepa.gif"
+		},
+		{
+			"id": 3,
+			"name": "Eric",
+			"email": "eric@ericrules.com",
+			"phone": "408-555-1234",
+			"address1": "10 Candyland",
+			"address2": "",
+			"city": "North Pole",
+			"state": "PA",
+			"zip": "87996",
+			"image": "images/eric.gif"
+		},
+		{
+			"id": 4,
+			"name": "Gregor",
+			"email": "gregor@gmail.com",
+			"phone": "897-984-3145",
+			"address1": "Gregor Insurance Co.",
+			"address2": "1234 Strip St",
+			"city": "New York",
+			"state": "NY",
+			"zip": "45879",
+			"image": "images/gregor.gif"
+		},
+		{
+			"id": 5,
+			"name": "Jeff",
+			"email": "jeff@aol.com",
+			"phone": "408-555-1234",
+			"address1": "1234 Montcalm St.",
+			"address2": "",
+			"city": "Chula Vista",
+			"state": "CA",
+			"zip": "91911",
+			"image": "images/jeff.gif"
+		},
+		{
+			"id": 6,
+			"name": "Jen",
+			"email": "jen@ebay.com",
+			"phone": "408-555-1234",
+			"address1": "1234 Lily St.",
+			"address2": "",
+			"city": "San Diego",
+			"state": "CA",
+			"zip": "91911",
+			"image": "images/jen.gif"
+		},
+		{
+			"id": 7,
+			"name": "Katie",
+			"email": "katie@ask.com",
+			"phone": "415-555-1234",
+			"address1": "949 Thunk Ct.",
+			"address2": "",
+			"city": "Sacramento",
+			"state": "CA",
+			"zip": "95826",
+			"image": "images/katie.gif"
+		},
+		{
+			"id": 8,
+			"name": "Vivian",
+			"email": "vivian@altavista.com",
+			"phone": "650-458-1234",
+			"address1": "949 FooBar St.",
+			"address2": "",
+			"city": "San Mateo",
+			"state": "CA",
+			"zip": "98745",
+			"image": "images/vivian.gif"
+		}
+		];
+
+		var Contacts = {
+			$table: document.getElementById("contacts-table"),
+			$form: document.getElementById("contacts-form"),
+			$select: document.getElementById("selector"),
+
+
+			init: function() {
+				Contacts.$form.reset();
+
+				if (Contacts.$table.addEventListener) {
+					Contacts.$table.addEventListener("mouseover", Contacts.handleMouseover, false);
+					Contacts.$table.addEventListener("mouseout", Contacts.handleMouseout, false);
+				}
+				else {
+					if (Contacts.$table.attachEvent) {
+						Contacts.$table.attachEvent("onmouseover", Contacts.handleMouseover);
+						Contacts.$table.attachEvent("onmouseout", Contacts.handleMouseout);
+					}
+				}
+
+				if(Contacts.$select.addEventListener) {
+					Contacts.$select.addEventListener("change", Contacts.handleChange, false);
+				}
+				else {
+					if (Contacts.$select.attachEvent) {
+						Contacts.$select.attachEvent("onchange", Contacts.handleChange, false);
+					}
+				}
+
+			},
+
+			handleMouseover: function(event) {
+
+				var v = event || window.event;
+				var t = v.target || v.srcElement;
+
+				if (t.className === "trigger") {
+					var thisEntry = t.parentNode.getAttribute("data-id");
+					t.bgColor='#cccccc';
+					document.body.style.cursor = 'pointer';
+				}
+
+				if (thisEntry) {
+					elem = document.getElementById('info');
+					elem.style.display = 'block';
+
+					var mvTop = t.offsetParent.offsetTop + t.offsetTop,
+					mvLeft = t.offsetParent.offsetLeft +t.offsetLeft + t.offsetWidth;
+
+					dString = JSON.stringify(objectContacts[thisEntry-1]),
+					myObject = JSON.parse(dString);
+
+					var email = myObject.email,
+					phone = myObject.phone,
+					address1 = myObject.address1,
+					city = myObject.city,
+					state = myObject.state,
+					zip = myObject.zip,
+					image = myObject.image;
+
+					if (myObject.address2) {
+						var address2 = myObject.address2;
+					}
+
+					var tmp='';
+					tmp+='<p>'+email+'<br>'+phone+'<br>'+address1;
+					if (address2){
+						tmp+='<br>'+address2
+					}
+					tmp+='<br>'+city+', '+state+' '+zip+'</p><img src='+image+' />';
+
+					elem.style.top = mvTop+'px';
+					elem.style.left = mvLeft+'px';
+
+					elem.innerHTML=tmp;
+				}
+			},
+
+			handleMouseout: function(event) {
+				var v = event || window.event;
+				var t = v.target || v.srcElement;
+				if (t.className === "trigger") {
+					t.bgColor='#ffffff';
+					document.body.style.cursor = 'default';
+				}
+
+				elem = document.getElementById('info');
+				elem.style.display = 'none';
+				elem.innerHTML = '';
+				elem.style.top = 0;
+				elem.style.left = 0;
+
+			},
+
+			handleChange: function(event) {
+				var v = event || window.event;
+				var t = v.target || v.srcElement;
+				if(t.selectedIndex === 1){
+					var tds = Contacts.$table.getElementsByTagName("td");
+
+					for (var i = 0; i<tds.length; i++) {
+						if (tds[i].className === "phone") {
+							tds[i].style.display="block";
+						}
+						if (tds[i].className === "email") {
+							tds[i].style.display="none";
+						}
+					}
+				}
+				else {
+					var tds = Contacts.$table.getElementsByTagName("td");
+
+					for (var i = 0; i<tds.length; i++) {
+						if (tds[i].className === "email") {
+							tds[i].style.display="block";
+						}
+						if (tds[i].className === "phone") {
+							tds[i].style.display="none";
+						}
+					}
+				}
+			}
+		};
+		Contacts.init();
+	</script>
+
+</body>
+</html>
