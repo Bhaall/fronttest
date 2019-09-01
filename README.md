@@ -1,5 +1,3 @@
-frontend
-=============
-test for Edmunds
+frontend test for Edmunds
 =======
 
